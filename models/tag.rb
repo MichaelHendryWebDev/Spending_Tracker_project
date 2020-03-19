@@ -20,8 +20,8 @@ class Tag
     $1
   ) RETURNING *"
   values = [@type]
-  tag_data = SqlRunner.run(sql, values)
-  @id = tag_data.first()['id'].to_i
+  tag_data = SqlRunner.run(sql, values).first
+  @id = tag_data['id'].to_i
 end
 
 def update()

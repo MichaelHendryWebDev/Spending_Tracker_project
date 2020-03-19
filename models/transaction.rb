@@ -24,7 +24,7 @@ def save()
   ) RETURNING *"
   values = [@merchant_id, @tag_id]
   transaction = SqlRunner.run(sql, values).first
-  @id = tag['id'].to_i
+  @id = transaction['id'].to_i
 end
 
 def delete()
