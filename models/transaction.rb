@@ -46,7 +46,10 @@ def self.all()
   return Transaction.new(transaction_data)
 end
 
-
+def self.delete_all
+  sql = "DELETE FROM transactions"
+  SqlRunner.run(sql)
+end
 
 def self.map_items(transation_data)
   result = transaction_data.map { |transaction| Transaction.new( transaction )}
