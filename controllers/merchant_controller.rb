@@ -9,7 +9,8 @@ get '/merchants' do
 end
 
 
-
-get '/merchants/:id' do
-  
+#fix later
+get '/merchant/:id' do
+  @merchant =  Merchant.find(params['id'].to_i)
+  erb(:"merchants/show")
 end
