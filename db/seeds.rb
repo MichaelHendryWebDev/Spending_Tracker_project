@@ -5,7 +5,7 @@ require_relative( '../models/transaction')
 
 Transaction.delete_all()
 Merchant.delete_all()
-# Tag.delete_all()
+Tag.delete_all()
 
 merchant1 = Merchant.new(
   {'name' => 'OzCorp'})

@@ -47,8 +47,8 @@ def self.all()
 end
 
 def self.delete_all
-  sql = "DELETE FROM transactions"
-  SqlRunner.run(sql)
+  sql = "DELETE FROM transactions"
+  SqlRunner.run(sql)
 end
 
 def self.map_items(transation_data)
