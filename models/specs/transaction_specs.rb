@@ -7,8 +7,10 @@ require_relative('../transaction')
 class TestTransaction < MiniTest::Test
 
 def setup()
-  options = {'id' => 1, 'merchant_id' => 2,
-    'tag_id' => 3}
+  options = {'id' => 1,
+    'merchant_id' => 2,
+    'tag_id' => 3,
+    'amount' => 100}
 
   @transaction = Transaction.new(options)
 end
@@ -21,5 +23,10 @@ end
 def test_tag_id()
   result = @transaction.tag_id()
   assert_equal(3, result)
+end
+
+def test_amount()
+  result = @transaction.amount()
+  assert_equal(100, result)
 end
 end
