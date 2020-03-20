@@ -3,8 +3,8 @@ require_relative( '../models/merchant')
 require_relative( '../models/tag')
 require_relative( '../models/transaction')
 
-# Merchant.delete_all()
 # Transaction.delete_all()
+Merchant.delete_all()
 # Tag.delete_all()
 
 merchant1 = Merchant.new(

@@ -42,6 +42,11 @@ def delete()
   SqlRunner.run(sql, values)
 end
 
+def self.delete_all
+  sql = "DELETE FROM tags"
+  SqlRunner.run(sql)
+end
+
 def self.all()
 sql = "SELECT * FROM tags"
 tag = SqlRunner.run(sql)
