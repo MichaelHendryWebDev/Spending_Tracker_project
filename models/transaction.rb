@@ -42,8 +42,8 @@ end
 
 def self.all()
   sql = "SELECT * FROM transactions"
-  transaction_data = SqlRunner.run(sql)
-  return Transaction.new(transaction_data)
+  transaction= SqlRunner.run(sql)
+  return Transaction.new(transaction)
 end
 
 def self.delete_all
