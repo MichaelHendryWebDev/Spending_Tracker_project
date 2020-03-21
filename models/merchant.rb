@@ -47,12 +47,11 @@ class Merchant
     return Merchant.new(results.first)
   end
 
-
-
   def self.all()
     sql = "SELECT * FROM merchants"
     results = SqlRunner.run( sql )
     return results.map { |merchant| Merchant.new( merchant ) }
+    return result
   end
 
   def self.delete_all

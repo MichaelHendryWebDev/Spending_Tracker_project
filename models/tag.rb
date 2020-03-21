@@ -6,7 +6,7 @@ class Tag
   attr_accessor :type
 
   def initialize(options)
-    @id = options['id'].to_i if options['id']
+    @id = options['id']
     @type = options['type']
   end
 
@@ -20,8 +20,8 @@ class Tag
     $1
   ) RETURNING *"
   values = [@type]
-  tag_data = SqlRunner.run(sql, values).first
-  @id = tag_data['id'].to_i
+  tag = SqlRunner.run(sql, values).first
+  @id = tag['id'].to_i
 end
 
 def update()
@@ -59,7 +59,6 @@ def self.find(id)
   values = [id]
   results = SqlRunner.run(sql, values)
   return Tag.new(results.first)
-  return result
 end
 
 

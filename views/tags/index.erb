@@ -2,6 +2,6 @@
 
 <% @tags.each do |tag| %>
 <p>Type: <%= tag.type() %></p>
-<p><a href="/<%= tag.id %>">Tag</a></p>
+<p><a href="/tags/<%= tag.id %>">Tag</a></p>
 <hr>
 <% end %>

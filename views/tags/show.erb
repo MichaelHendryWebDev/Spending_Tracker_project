@@ -1,4 +1,1 @@
-<p>Tag: <%= @tag.type() %></p>
-<p><a href="/tags/<%= @tag.id %>">Show Order</a></p>
-
-SELECT merchants.name, tags.type FROM merchants INNER JOIN tags ON merchants.id = tag.merchant_id;
+<h1><%= @tag.type %></h1>
