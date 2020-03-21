@@ -6,7 +6,7 @@ class Tag
   attr_accessor :type
 
   def initialize(options)
-    @id = options['id'].to_i
+    @id = options['id'].to_i if options['id']
     @type = options['type']
   end
 
@@ -57,13 +57,10 @@ end
 def self.find(id)
   sql = "SELECT * FROM tags WHERE id = $1"
   values = [id]
-  tag = SqlRunner.run(sql, values)
-  result = Tag.new(tag.first)
+  results = SqlRunner.run(sql, values)
+  return Tag.new(results.first)
   return result
 end
 
-def self.map_items(tag_data)
-  result = tag_data.map {|tag| Tag.new(tag)}
-  return result
-end
+
 end

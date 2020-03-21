@@ -6,7 +6,7 @@ attr_reader :id
 attr_accessor :merchant_id, :tag_id, :amount
 
 def initialize(options)
-  @id = options['id'].to_i
+  @id = options['id'].to_i if options['id']
   @merchant_id = options['merchant_id'].to_i
   @tag_id = options['tag_id'].to_i
   @amount = options['amount'].to_i
@@ -16,13 +16,14 @@ def save()
   sql = "INSERT INTO transactions
   (
     merchant_id,
-    tag_id
+    tag_id,
+    amount
   )
   VALUES
   (
-    $1, $2
+    $1, $2, $3
   ) RETURNING *"
-  values = [@merchant_id, @tag_id]
+  values = [@merchant_id, @tag_id, @amount]
   transaction = SqlRunner.run(sql, values).first
   @id = transaction['id'].to_i
 end

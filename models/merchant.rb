@@ -6,7 +6,7 @@ class Merchant
   attr_accessor :name
 
   def initialize( options )
-    @id = options['id'].to_i
+    @id = options['id']
     @name = options['name']
 
   end
@@ -40,17 +40,19 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
-  def self.find( id )
-    sql = "SELECT * FROM merchants"
-    merchant = SqlRunner.run(sql)
-    result = merchant.map { |merchant| Merchant.new(merchant)}
-    return result
+  def self.find(id)
+    sql = "SELECT * FROM merchants WHERE id = $1"
+     values = [id]
+    results = SqlRunner.run(sql, values)
+    return Merchant.new(results.first)
   end
+
+
 
   def self.all()
     sql = "SELECT * FROM merchants"
-    merchant_data = SqlRunner.run(sql)
-    return Merchant.map_items(merchant_data)
+    results = SqlRunner.run( sql )
+    return results.map { |merchant| Merchant.new( merchant ) }
   end
 
   def self.delete_all
@@ -58,9 +60,6 @@ class Merchant
     SqlRunner.run(sql)
   end
 
-  def self.map_items(merchant_data)
-    result = merchant_data.map { |merchant| Merchant.new( merchant )}
-    return result
-  end
+
 
 end
