@@ -35,6 +35,20 @@ def delete()
   SqlRunner.run(sql, values)
 end
 
+def merchants()
+  sql = "SELECT * FROM merchants WHERE id = $1"
+  values = [@merchant_id]
+  results = SqlRunner.run(sql, values)
+  return Merchant.new( results.first)
+end
+
+def tags()
+  sql = "SELECT * FROM tags WHERE id = $1"
+  values = [@tag_id]
+  results = SqlRunner.run(sql, values)
+  return Tag.new(result.first)
+end
+
 def self.find(id)
   sql = "SELECT * FROM transactions"
   transaction = SqlRunner.run(sql)
