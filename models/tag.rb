@@ -42,6 +42,13 @@ def delete()
   SqlRunner.run(sql, values)
 end
 
+def merchants()
+  sql = "SELECT merchants.* FROM merchants merchants INNER JOIN transactions transactions ON transactions.merchant_id = merchant_id WHERE transactions.tag_id = $1"
+  values = [@id]
+  tag_data = SqlRunner.run(sql, values)
+  return Merchant.map_items(tag_data)
+end
+
 def self.delete_all
   sql = "DELETE FROM tags"
   SqlRunner.run(sql)
@@ -49,9 +56,8 @@ end
 
 def self.all()
 sql = "SELECT * FROM tags"
-tag = SqlRunner.run(sql)
-result = tag.map { |tag| Tag.new(tag)}
-return result
+tag_data = SqlRunner.run(sql)
+return Tag.map_items(tag_data)
 end
 
 def self.find(id)
@@ -61,5 +67,9 @@ def self.find(id)
   return Tag.new(results.first)
 end
 
+def self.map_items(tag_data)
+  result = tag_data.map { |tag| Tag.new(tag)}
+  return result
+end
 
 end

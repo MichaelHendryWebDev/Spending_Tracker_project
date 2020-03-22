@@ -1,0 +1,11 @@
+<h1>Transactions</h1>
+<p><a href="transactions/new">New transaction</a></p>
+<div class="list">
+  <ul>
+    <% for transaction in @transactions %>
+      <li>
+        <a href="/transactions/<%= transaction.id %>"><%= transaction.merchant_id %> <%= transaction.tag_id %><%= transaction.amount %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>

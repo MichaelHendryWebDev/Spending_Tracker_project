@@ -40,18 +40,19 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
-  def self.find(id)
+  def self.find( id )
     sql = "SELECT * FROM merchants WHERE id = $1"
      values = [id]
     results = SqlRunner.run(sql, values)
     return Merchant.new(results.first)
   end
 
+
+
   def self.all()
     sql = "SELECT * FROM merchants"
     results = SqlRunner.run( sql )
     return results.map { |merchant| Merchant.new( merchant ) }
-    return result
   end
 
   def self.delete_all
@@ -59,6 +60,6 @@ class Merchant
     SqlRunner.run(sql)
   end
 
-
+  
 
 end
