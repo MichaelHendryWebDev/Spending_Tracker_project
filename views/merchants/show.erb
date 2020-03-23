@@ -1,8 +1,8 @@
 <h1> <%= @merchant.name %></h1>
 <hr>
-<form action="/merchants/index <% @merchant.id %>"" method="post">
+<form action="/merchants <% @merchant.id %>" method="post">
   <p>Edit Merchant</p>
   <label for="name">Name:</label>
   <input type="text" name="name" value="<%= @merchant.name %>">
-  <input type="submit" value="Accept Changes">
+  <input type="submit"  value=<%= "Accept Changes" %>>
 </form>
