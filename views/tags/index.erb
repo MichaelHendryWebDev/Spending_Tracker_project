@@ -1,7 +1,13 @@
 <h1>Tags</h1>
-
-<% @tags.each do |tag| %>
-<p>Type: <%= tag.type() %></p>
-<p><a href="/tags/<%= tag.id %>">Tag</a></p>
-<hr>
-<% end %>
+<table>
+  <tr>
+    <th>Type</th>
+    <th></th>
+  </tr>
+  <% for tag in @tags %>
+  <tr>
+    <td><a href="/tags/<%= tag.id %>"><%= tag.type %></a></td>
+    <td>|</td>
+  </tr>
+  <% end %>
+</table>

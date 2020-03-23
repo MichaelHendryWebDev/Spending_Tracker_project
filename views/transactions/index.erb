@@ -4,7 +4,11 @@
   <ul>
     <% for transaction in @transactions %>
       <li>
-        <a href="/transactions/<%= transaction.id %>"><%= transaction.merchant_id %> <%= transaction.tag_id %><%= transaction.amount %></a>
+        <a href="/transactions/<%= transaction.id %>"><%= transaction.amount %></a>
+          <%= transaction.merchants.name %>
+          <%  for tag in transaction.tags %>
+          <p><%= tag.type %></p>
+          <% end %>
       </li>
     <% end %>
   </ul>
