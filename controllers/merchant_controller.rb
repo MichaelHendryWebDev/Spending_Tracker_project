@@ -14,13 +14,10 @@ get '/merchants/:id' do
   erb(:"merchants/show")
 end
 
-get '/merchants/new' do
-  @merchants = Merchant.all
-  erb(:"merchants/new")
-end
+
 
 post '/merchants' do
   merchant = Merchant.new(params)
-  merchant.save
-  redirect to (:'merchants/index')
+  @merchant.save
+  redirect to ("/merchants")
 end
