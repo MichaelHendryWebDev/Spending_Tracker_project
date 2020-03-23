@@ -17,8 +17,18 @@ get '/transactions/new' do
   erb(:"transactions/new")
 end
 
+get '/transactions/:id' do
+  @transaction =  Transaction.find(params['id'].to_i)
+  erb(:"transactions/show")
+end
+
+get '/transactions/:id/new' do
+  @transaction = Transaction.find(params[:id].to_i)
+  erb(:"transactions/new")
+end
+
 post '/transactions' do
   transaction = Transaction.new(params)
   transaction.save
-  redirect to (:'transactions/index')
+  redirect to (:'/transactions')
 end

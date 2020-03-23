@@ -4,7 +4,7 @@
     Select Merchant:
     <select name="merchant_id">
       <% for merchant in @merchants %>
-      <option value="<% merchant.id %>"><%=    merchant.name%></option>
+      <option value="<%= merchant.id %>"><%=    merchant.name%></option>
       <% end %>
 
     </select>
@@ -15,13 +15,14 @@
     Select Tag:
     <select name="tag_id">
       <% for tag in @tags %>
-      <option value="<% tag.id %>"><%= tag.type %></option>
+      <option value="<%= tag.id %>"><%= tag.type %></option>
       <% end %>
     </select>
   </label>
   <br>
   <hr>
   Amount:
-  <input type="number" name="Amount" value="submit">
+  <input type="number" name="amount" value="">
+  <input type="submit" name="" value="Add New Transaction">
 </form>
 <hr>

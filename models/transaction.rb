@@ -7,7 +7,7 @@ attr_reader :id
 attr_accessor :merchant_id, :tag_id, :amount
 
 def initialize(options)
-  @id = options['id'].to_i if options['id']
+  @id = options['id'].to_i
   @merchant_id = options['merchant_id'].to_i
   @tag_id = options['tag_id'].to_i
   @amount = options['amount'].to_i
@@ -49,12 +49,12 @@ def tags()
   return results.map {|tag| Tag.new(tag)}
 end
 
-def self.find(id)
+
+def self.find( id )
   sql = "SELECT * FROM transactions WHERE id = $1"
-  values = [id]
-  transaction = SqlRunner.run(sql, values)[0]
-  result = Transaction.new(transaction)
-  return result
+   values = [id]
+  results = SqlRunner.run(sql, values)
+  return Transaction.new(results.first)
 end
 
 def self.all()
