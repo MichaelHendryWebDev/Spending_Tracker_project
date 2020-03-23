@@ -1,2 +1,5 @@
 <h1><%= @tag.type %></h1>
-<p><%= @tag.merchants.first %></p>
+<p><a href="/tags/<%= @tag.id %>/create">Create Tag</a></p>
+<form action="/tags/<%= @tag.id %>/delete" method="post">
+  <input type="submit" value="Delete Tag"/>
+<hr>

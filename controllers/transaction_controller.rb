@@ -22,9 +22,9 @@ get '/transactions/:id' do
   erb(:"transactions/show")
 end
 
-get '/transactions/:id/new' do
+get '/transactions/:id/edit' do
   @transaction = Transaction.find(params[:id].to_i)
-  erb(:"transactions/new")
+  erb(:"transactions/edit")
 end
 
 post '/transactions' do
