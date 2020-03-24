@@ -4,13 +4,14 @@ class Transaction
 
 
 attr_reader :id
-attr_accessor :merchant_id, :tag_id, :amount
+attr_accessor :merchant_id, :tag_id, :amount, :total
 
 def initialize(options)
   @id = options['id'].to_i
   @merchant_id = options['merchant_id'].to_i
   @tag_id = options['tag_id'].to_i
   @amount = options['amount'].to_i
+  @total = options['total'].to_i
 end
 
 def save()

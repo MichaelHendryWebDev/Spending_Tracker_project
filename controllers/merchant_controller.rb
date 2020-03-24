@@ -20,10 +20,7 @@ get '/merchants/:id/edit' do
   erb(:"merchants/edit")
 end
 
-post '/merchants/:id' do
-  Merchant.new(params).update()
-  redirect to (:"/merchants")
-end
+
 
 post '/merchants' do
   merchant = Merchant.new(params)
@@ -31,7 +28,11 @@ post '/merchants' do
   redirect to (:"/merchants")
 end
 
-
+post '/merchants/:id' do
+  Merchant.new(params)
+  Merchant.update
+  redirect to (:"/merchants#{params['id']}")
+end
 
 post '/merchants/:id/delete' do
   Merchant.find(params['id'].to_i).delete()
