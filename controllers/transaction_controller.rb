@@ -6,8 +6,9 @@ require_relative('../models/tag.rb')
 also_reload('../models/*')
 require('pry-byebug')
 
-get '/transactions' do
+get '/transactions' do #index
   @transactions = Transaction.all
+  @total = Transaction.add_total(@transactions)
   erb(:'transactions/index')
 end
 
@@ -30,5 +31,5 @@ end
 post '/transactions' do
   transaction = Transaction.new(params)
   transaction.save
-  redirect to (:'/transactions')
+  redirect to ("/transactions")
 end
