@@ -23,12 +23,16 @@ get '/merchants/:id/edit' do #edit
   erb(:"merchants/edit")
 end
 
-
+post '/merchants/:id' do
+  merchant = Merchant.new(params)
+  merchant.update()
+  redirect to "/merchants/#{params['id']}"
+end
 
 post '/merchants' do #create
   merchant = Merchant.new(params)
   merchant.save
-  redirect to (:"/merchants")
+  redirect to ('/merchants')
 end
 
 
