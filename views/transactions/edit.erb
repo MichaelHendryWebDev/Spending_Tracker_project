@@ -1,5 +1,5 @@
 <h1>Edit Transaction</h1>
-<form action="/transactions" method="post">
+<form method="post" action="/transactions/<%= @transaction.id %>" >
   <label>
     Change Merchant:
     <select name="merchant_id">

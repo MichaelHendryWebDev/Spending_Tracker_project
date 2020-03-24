@@ -39,13 +39,7 @@ end
 
 def update()
     sql = "UPDATE transactions
-    SET
-    (
-      amount
-    ) =
-    (
-      $1
-    )
+    SET amount = $1
     WHERE id = $2"
     values = [@amount, @id]
     SqlRunner.run( sql, values )
