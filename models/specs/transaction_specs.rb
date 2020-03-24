@@ -36,4 +36,5 @@ def test_total()
   assert_equal(0, result)
 end
 
+
 end

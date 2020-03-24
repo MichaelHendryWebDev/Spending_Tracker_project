@@ -14,18 +14,21 @@ def initialize(options)
   @total = options['total'].to_i
 end
 
+
+
 def save()
   sql = "INSERT INTO transactions
   (
     merchant_id,
     tag_id,
-    amount
+    amount,
+    total
   )
   VALUES
   (
-    $1, $2, $3
+    $1, $2, $3, $4
   ) RETURNING id"
-  values = [@merchant_id, @tag_id, @amount]
+  values = [@merchant_id, @tag_id, @amount, @total]
   transaction = SqlRunner.run(sql, values).first
   @id = transaction['id'].to_i
 end

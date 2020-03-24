@@ -17,7 +17,7 @@ tag1.save()
 
 transaction1 = Transaction.new(
   {'merchant_id' => merchant1.id,
-  'tag_id' => tag1.id, 'amount' => 100})
+  'tag_id' => tag1.id, 'amount' => 100, 'total' => 0})
 transaction1.save()
 
 binding.pry
