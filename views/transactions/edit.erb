@@ -1,0 +1,28 @@
+<h1>Edit Transaction</h1>
+<form action="/transactions" method="post">
+  <label>
+    Change Merchant:
+    <select name="merchant_id">
+      <% for merchant in @merchants %>
+      <option value="<%= merchant.id %>"><%=    merchant.name%></option>
+      <% end %>
+
+    </select>
+  </label>
+  <br>
+<hr>
+  <label>
+    Change Tag:
+    <select name="tag_id">
+      <% for tag in @tags %>
+      <option value="<%= tag.id %>"><%= tag.type %></option>
+      <% end %>
+    </select>
+  </label>
+  <br>
+  <hr>
+  Edit Amount:
+  <input type="number" name="amount" value="<%= @transaction.amount %>">
+  <input type="submit" name="" value="Accept Changes Transaction">
+</form>
+<hr>

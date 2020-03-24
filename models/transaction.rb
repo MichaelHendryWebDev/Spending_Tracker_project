@@ -37,6 +37,20 @@ def save()
   @id = transaction['id'].to_i
 end
 
+def update()
+    sql = "UPDATE transactions
+    SET
+    (
+      amount
+    ) =
+    (
+      $1
+    )
+    WHERE id = $2"
+    values = [@amount, @id]
+    SqlRunner.run( sql, values )
+  end
+
 def delete()
   sql = "DELETE FROM transactions WHERE id = $1"
   values = [@id]

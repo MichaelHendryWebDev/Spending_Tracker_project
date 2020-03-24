@@ -1,0 +1,6 @@
+<p><a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a></p>
+<h1><%= @transaction.merchants.name %></h1>
+<%  for tag in @transaction.tags %>
+<h2><%= tag.type %></h2>
+<% end %>
+<h2><%= @transaction.amount %></h2>
