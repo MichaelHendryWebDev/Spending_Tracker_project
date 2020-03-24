@@ -8,7 +8,7 @@ get '/tags' do #index
   erb (:"tags/index")
 end
 
-get '/tagss/new' do # new
+get '/tags/new' do # new
   erb( :"tags/new" )
 end
 
@@ -31,7 +31,7 @@ end
 post '/tags' do #create
   tag = Tag.new(params)
   tag.save
-  redirect to ('/tag')
+  redirect to ('/tags')
 end
 
 post '/tags/:id/delete' do
