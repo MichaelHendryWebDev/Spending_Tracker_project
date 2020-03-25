@@ -4,3 +4,5 @@
 <h2><%= tag.type %></h2>
 <% end %>
 <h2><%= @transaction.amount %></h2>
+<form action="/transactions/<%= @transaction.id %>/delete" method="post">
+  <input type="submit" value="Delete Transaction"/>
