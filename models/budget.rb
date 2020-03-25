@@ -10,6 +10,8 @@ class Budget
     @cash = options['cash'].to_i
   end
 
+
+
 def save()
   sql = "INSERT INTO budgets
   (
@@ -26,7 +28,7 @@ end
 
 def update()
   sql = "UPDATE budgets
-  SET type = $1
+  SET cash = $1
   WHERE id = $2"
   values = [@cash, @id]
   SqlRunner.run(sql, values)

@@ -1,0 +1,30 @@
+body {
+
+  background-color: skyblue;
+}
+
+a {
+  text-decoration: none;
+  color: dodgerblue;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: flex-end;
+  background-color: white;
+  height: 80px;
+  font-family: Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  border-bottom: 3px solid lightblue;
+}
+
+.box {
+  
+}
+
+.navbar-inner a:hover {
+  border-bottom: 3px solid dodgerblue;
+}
