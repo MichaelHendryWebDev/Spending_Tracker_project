@@ -21,6 +21,10 @@ def self.add_total(transactions)
   return total
 end
 
+def self.state_false()
+  merchant.state = false
+end
+
 def save()
   sql = "INSERT INTO transactions
   (
