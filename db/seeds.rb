@@ -8,7 +8,7 @@ Merchant.delete_all()
 Tag.delete_all()
 
 merchant1 = Merchant.new(
-  {'name' => 'OzCorp'})
+  {'name' => 'OzCorp', 'state' => true})
 merchant1.save()
 
 tag1 = Tag.new(

@@ -4,7 +4,8 @@ DROP TABLE tags;
 
 CREATE TABLE merchants (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR(255),
+  state BOOLEAN
 );
 
 CREATE TABLE tags (

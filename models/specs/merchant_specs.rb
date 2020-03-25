@@ -7,7 +7,7 @@ require_relative('../merchant')
 class TestMerchant < MiniTest::Test
 
 def setup
-  options = {'id' => 1, 'name' => 'OzCorp'}
+  options = {'id' => 1, 'name' => 'OzCorp', 'state' => true}
 
   @merchant = Merchant.new(options)
 end
