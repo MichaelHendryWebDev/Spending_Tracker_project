@@ -22,9 +22,6 @@ def test_state_true()
   assert_equal(true, result)
 end
 
-def test_state_false()
-  result = @merchant.state()
-  assert_equal(true, result)
-end
+
 
 end

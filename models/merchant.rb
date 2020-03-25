@@ -9,7 +9,10 @@ class Merchant
     @id = options['id']
     @name = options['name']
     @state = options['state']
+  end
 
+  def self.state_change()
+    return false
   end
 
   def save()
@@ -56,6 +59,7 @@ class Merchant
     return Tag.map_items(merchant_data)
   end
 
+
   def self.find( id )
     sql = "SELECT * FROM merchants WHERE id = $1"
      values = [id]
@@ -68,6 +72,7 @@ class Merchant
     results = SqlRunner.run( sql )
     return results.map { |merchant| Merchant.new( merchant ) }
   end
+
 
   def self.delete_all
     sql = "DELETE FROM merchants"

@@ -1,6 +1,7 @@
 DROP TABLE transactions;
 DROP TABLE merchants;
 DROP TABLE tags;
+DROP TABLE budget;
 
 CREATE TABLE merchants (
   id SERIAL PRIMARY KEY,
@@ -19,3 +20,8 @@ CREATE TABLE transactions (
   tag_id INT REFERENCES tags(id) ON DELETE CASCADE,
   amount INT
 );
+
+CREATE TABLE budget (
+  id SERIAL PRIMARY KEY,
+  budget INT
+)
