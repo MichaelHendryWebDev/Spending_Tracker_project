@@ -3,12 +3,14 @@ require('sinatra/contrib/all')
 require_relative('../models/transaction.rb')
 require_relative('../models/merchant.rb')
 require_relative('../models/tag.rb')
+require_relative('../models/budget.rb')
 also_reload('../models/*')
 require('pry-byebug')
 
 get '/transactions' do #index
   @transactions = Transaction.all
   @total = Transaction.add_total(@transactions)
+  @budget = Budget.all
   erb(:'transactions/index')
 end
 

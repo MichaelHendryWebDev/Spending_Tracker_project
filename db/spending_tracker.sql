@@ -1,7 +1,7 @@
 DROP TABLE transactions;
 DROP TABLE merchants;
 DROP TABLE tags;
-DROP TABLE budget;
+DROP TABLE budgets;
 
 CREATE TABLE merchants (
   id SERIAL PRIMARY KEY,
@@ -21,7 +21,7 @@ CREATE TABLE transactions (
   amount INT
 );
 
-CREATE TABLE budget (
+CREATE TABLE budgets (
   id SERIAL PRIMARY KEY,
   budget INT
 )

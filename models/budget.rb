@@ -21,7 +21,7 @@ def save()
   ) RETURNING *"
   values = [@budget]
   budget = SqlRunner.run(sql, values).first
-  @id = tag['id'].to_i
+  @id = budget['id'].to_i
 end
 
 def update()
@@ -45,15 +45,16 @@ def self.delete_all
 end
 
 def self.all()
-sql = "SELECT * FROM budgets"
-budget_data = SqlRunner.run(sql)
-return Tag.map_items(budget_data)
+  sql = "SELECT * FROM budgets"
+  results = SqlRunner.run( sql )
+  return results.map { |budget| Budget.new( budget ) }
 end
+
 
 def self.find(id)
   sql = "SELECT * FROM budgets WHERE id = $1"
   values = [id]
   results = SqlRunner.run(sql, values)
-  return Tag.new(results.first)
+  return Budget.new(results.first)
 end
 end
