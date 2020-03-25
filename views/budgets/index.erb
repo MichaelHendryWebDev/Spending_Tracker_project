@@ -1,0 +1,10 @@
+<h1>Budget</h1>
+
+<table>
+  <% for budget in @budgets %>
+  <tr>
+    <td><a href="/budgets/<%= budget.id %>"><%= budget.cash %></a></td>
+  </tr>
+  <% end %>
+</table>
+<p><a href="budgets/new">new</a></p>

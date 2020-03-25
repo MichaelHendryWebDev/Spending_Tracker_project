@@ -23,5 +23,5 @@ CREATE TABLE transactions (
 
 CREATE TABLE budgets (
   id SERIAL PRIMARY KEY,
-  budget INT
+  cash INT
 )

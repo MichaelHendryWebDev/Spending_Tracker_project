@@ -1,0 +1,6 @@
+<h2>Edit <%= @budget.cash %></h2>
+<form method="post" action="/budgets/<%= @budget.id %>" >
+  <label for="cash-field">Budget:</label>
+  <input type="text" name="cash" id="cash-field" value="<%= @budget.cash %>">
+  <input type="submit"  value="Accept Changes">
+</form>

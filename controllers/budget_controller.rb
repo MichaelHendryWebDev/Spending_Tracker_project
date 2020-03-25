@@ -4,7 +4,7 @@ require_relative('../models/budget.rb')
 also_reload('../models/*')
 
 get '/budgets' do   #index
-  @budgets = Budget.all()
+  @budgets = Budget.all
   erb (:"budgets/index")
 end
 
@@ -31,13 +31,6 @@ end
 
 post '/budgets' do #create
   budget = Budget.new(params)
-  budget.save
+  budget.save()
   redirect to ('/budgets')
-end
-
-
-
-post '/budgets/:id/delete' do #delete
-  Budget.find(params['id'].to_i).delete()
-  redirect to '/budgets'
 end

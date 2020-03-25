@@ -23,7 +23,7 @@ transaction1 = Transaction.new(
 transaction1.save()
 
 budget1 = Budget.new(
-  {'budget' => 0})
+  {'cash' => 100})
   budget1.save()
 
 binding.pry

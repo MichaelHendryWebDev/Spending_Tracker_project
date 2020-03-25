@@ -7,13 +7,13 @@ require_relative('../budget')
 class TestBudget < MiniTest::Test
 
 def setup
-  options = {'id' => 1, 'budget' => 10}
+  options = {'id' => 1, 'cash' => 10}
 
   @budget = Budget.new(options)
 end
 
 def test_budget()
-  result = @budget.budget()
+  result = @budget.cash()
   assert_equal(10, result)
 end
 end

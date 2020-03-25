@@ -11,9 +11,7 @@ class Merchant
     @state = options['state']
   end
 
-  def self.state_change()
-    return false
-  end
+
 
   def save()
     sql = "INSERT INTO merchants

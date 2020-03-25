@@ -10,7 +10,7 @@ require('pry-byebug')
 get '/transactions' do #index
   @transactions = Transaction.all
   @total = Transaction.add_total(@transactions)
-  @budget = Budget.all
+  @budgets = Budget.all
   erb(:'transactions/index')
 end
 

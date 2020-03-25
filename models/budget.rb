@@ -3,23 +3,23 @@ require_relative('../db/sql_runner')
 class Budget
 
   attr_reader :id
-  attr_accessor :budget
+  attr_accessor :cash
 
   def initialize(options)
-    @id = options['id']
-    @budget = options['budget']
+    @id = options['id'].to_i
+    @cash = options['cash'].to_i
   end
 
 def save()
   sql = "INSERT INTO budgets
   (
-    budget
+    cash
   )
   VALUES
   (
       $1
   ) RETURNING *"
-  values = [@budget]
+  values = [@cash]
   budget = SqlRunner.run(sql, values).first
   @id = budget['id'].to_i
 end
@@ -28,7 +28,7 @@ def update()
   sql = "UPDATE budgets
   SET type = $1
   WHERE id = $2"
-  values = [@budget, @id]
+  values = [@cash, @id]
   SqlRunner.run(sql, values)
 end
 
@@ -47,7 +47,7 @@ end
 def self.all()
   sql = "SELECT * FROM budgets"
   results = SqlRunner.run( sql )
-  return results.map { |budget| Budget.new( budget ) }
+  return results.map { |cash| Budget.new( cash ) }
 end
 
 
