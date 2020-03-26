@@ -39,11 +39,15 @@
         <h1 class="budget">Budget: <%= @budget.cash %></h1>
 
     </table>
+    <% if @total > @budget.cash %>
+    <h3><%= "Total has exceeded Budget!" %></h3>
+    <% end %>
     <h1 class="total">Total: <%= @total %></h1>
     <div class="transaction-links">
       <button type="button" name="button" class="button"><a href="transactions/new"> New Transaction</a></button>
 
     </div>
+
 <hr>
   </body>
 </html>

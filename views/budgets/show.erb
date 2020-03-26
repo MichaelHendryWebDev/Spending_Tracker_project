@@ -1,1 +1,10 @@
-<h1><a href="/budgets/<%= @budget.id %>/edit">Edit Budget</a></h1>
+
+<form class="form" method="post" action="/budgets/<%= @budget.id %>" >
+  <h1>Budget:
+    <%= @budget.cash %>
+  </h1>
+
+  <label for="cash-field">Budget:</label>
+  <input type="number" name="cash" id="cash-field" value="<%= @budget.cash %>">
+  <input type="submit"  value="Accept Changes">
+</form>

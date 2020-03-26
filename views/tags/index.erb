@@ -1,8 +1,8 @@
-<h1 class="class-title">Tags</h1>
 <form class="form" action="index.html" method="post">
+  <h1 class="class-title">Tags:</h1>
 
   <% for tag in @tags %>
-  <h2><a href="/tags/<%= tag.id %>"><%= tag.type %></a></h2>
+  <h2><a class="added-links" href="/tags/<%= tag.id %>"><%= tag.type %></a></h2>
   <% end %>
   <button class="button" type="button" name="button">
     <a href="tags/new">New Tag</a>

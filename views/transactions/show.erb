@@ -6,6 +6,7 @@
   <h2>Tag: <%= tag.type %></h2>
   <% end %>
   <h2>Amount: <%= @transaction.amount %></h2>
+  </form>
   <form action="/transactions/<%= @transaction.id %>/delete" method="post">
-    <input type="submit" value="Delete Transaction" class="delete"/>
+    <input class="delete" type="submit" value="Delete Transaction"/>
 </form>

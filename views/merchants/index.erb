@@ -1,8 +1,9 @@
 
-<h1 class="class-title">Merchants</h1>
 <form class="form" action="index.html" method="post">
+  <h1 class="class-title">Merchants:</h1>
+
   <% for merchant in @merchants %>
-<h1><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></h1>
+<h1><a class="added-links" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></h1>
 <% end %>
 <button class="button" type="button" name="button"><a href="merchants/new">New Merchant</a></button>
 </form>
