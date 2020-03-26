@@ -1,44 +1,57 @@
 .body-size {
-  background-color: skyblue;
-}
-
-table {
-  background-color: white;
-  font-size: 30px;
-  width: 100%
-  align-auto;
-  position:
-}
-
-td {
-
+  background-color: #009dff
 }
 
 h1 {
   font-family: Helvetica, sans-serif;
-  color: black;
+  color: white;
 }
 
+h2 {
+  font-family: Helvetica, sans-serif;
+  color: white;
+}
 
 .sidebar {
   top: 112px;
   display: none;
 }
 
-.total {
-  display: flex;
-  justify-content: flex-end;
-  border-top: 1px solid black;
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  text-align: left;
+  font-weight: bold;
+  width: 100%;
+  background-color: #bfe6ff;
+}
+
+.content-table thead tr {
+  background-color: #26abff;
+  color: white;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
 }
 
 .budget {
   display: flex;
   justify-content: flex-end;
+  padding-right: 100px;
+  color:white;
 }
 
 a {
   text-decoration: none;
-  color: dodgerblue;
+  color: white;
 }
 
 .navbar-inner {
@@ -46,20 +59,73 @@ a {
   justify-content: space-around;
   align-content: center;
   align-items: flex-end;
-  background-color: white;
   height: 80px;
   font-family: Helvetica, sans-serif;
   font-size: 30px;
   font-weight: bold;
-  border-bottom: 3px solid lightblue;
   height: 40px;
-
-}
-
-.box {
-
 }
 
 .navbar-inner a:hover {
-  border-bottom: 3px solid lightblue;
+  border-bottom: 3px solid #8cd3ff;
+}
+
+.transaction-links {
+  display: flex;
+  padding-top: 40px;
+}
+
+.button {
+  font-size: 20px;
+  background-color: #8cd3ff;
+}
+
+.button:hover {
+  background-color: skyblue;
+}
+
+.edit-link {
+  color: skyblue;
+}
+
+.form {
+  font-size: 30px;
+  font-family: Helvetica, sans-serif;
+  border: 1px solid skyblue;
+  font-weight: bold;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #26abff;
+  color: white;
+}
+
+.edit-form {
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  border: 1px solid skyblue;
+  font-weight: bold;
+  background-color: #26abff;
+  color: white;
+  padding-top: 30px;
+  padding-left: 70px;
+  padding-bottom: 30px;
+}
+
+select {
+  font-size: 20px;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
+}
+
+.delete:hover {
+  background-color: red;
+}
+
+.edit-title {
+  display: flex;
+  justify-content: center;
 }

@@ -4,22 +4,22 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body class="table">
-    <table>
-      <h1>Transactions</h1>
-
-      <tr>
+  <body>
+    <table class="content-table">
+        <thead>
+          <tr>
         <th></th>
-        <th>Merchant</th>
+        <th >Merchant</th>
         <th>Tag</th>
         <th>Amount</th>
       </tr>
-
+    </thead>
+    <tbody>
         <% for transaction in @transactions %>
 
         <tr>
           <td>
-          <a href="/transactions/<%= transaction.id %>">Edit Transaction</a>
+          <button type="button" name="edit"><a class="edit-link" href="/transactions/<%= transaction.id %>">Edit Transaction</a></button>
           </td>
           <td>
             <%= transaction.merchants.name %>
@@ -33,14 +33,17 @@
           </td>
             <% end %>
         </tr>
-
+    </tbody>
         <% end %>
-        <div class="transaction-links">
-          <a href="transactions/new">New transaction</a>
-        </div>
+
         <h1 class="budget">Budget: <%= @budget.cash %></h1>
+
     </table>
     <h1 class="total">Total: <%= @total %></h1>
+    <div class="transaction-links">
+      <button type="button" name="button" class="button"><a href="transactions/new"> New Transaction</a></button>
 
+    </div>
+<hr>
   </body>
 </html>
