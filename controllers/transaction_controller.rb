@@ -8,13 +8,13 @@ also_reload('../models/*')
 require('pry-byebug')
 
 get '/transactions' do #index
+  @budget = Budget.all[0]
   @transactions = Transaction.all
   @total = Transaction.add_total(@transactions)
   erb(:'transactions/index')
 end
 
 get '/transactions/new' do
-  @budgets = Budget.all
   @merchants = Merchant.all
   @tags = Tag.all
   erb(:"transactions/new")

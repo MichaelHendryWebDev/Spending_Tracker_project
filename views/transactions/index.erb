@@ -1,24 +1,46 @@
-<h1>Transactions</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body class="table">
+    <table>
+      <h1>Transactions</h1>
 
-<p><a href="transactions/new">New transaction</a></p>
-<div class="list">
-  <ul>
+      <tr>
+        <th></th>
+        <th>Merchant</th>
+        <th>Tag</th>
+        <th>Amount</th>
+      </tr>
 
-    <% for transaction in @transactions %>
-      <li>
-        <a href="/transactions/<%= transaction.id %>">Transaction</a>
-          <%= transaction.merchants.name %>
-          <%  for tag in transaction.tags %>
-          <%= tag.type %>
-          <%= transaction.amount %>
-          <hr>
+        <% for transaction in @transactions %>
 
-          <% end %>
-      </li>
+        <tr>
+          <td>
+          <a href="/transactions/<%= transaction.id %>">Edit Transaction</a>
+          </td>
+          <td>
+            <%= transaction.merchants.name %>
+          </td>
+          <td>
+            <%  for tag in transaction.tags %>
+            <%= tag.type %>
+          </td>
+          <td>
+            <%= transaction.amount %>
+          </td>
+            <% end %>
+        </tr>
 
-    <% end %>
+        <% end %>
+        <div class="transaction-links">
+          <a href="transactions/new">New transaction</a>
+        </div>
+        <h1 class="budget">Budget: <%= @budget.cash %></h1>
+    </table>
+    <h1 class="total">Total: <%= @total %></h1>
 
-  </ul>
-  <h1>Total: <%= @total %></h1>
-
-</div>
+  </body>
+</html>
