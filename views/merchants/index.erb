@@ -1,14 +1,8 @@
-<table class="menu-pos">
-  <h1>Merchant</h1>
-  <tr>
-    <th>Name</th>
-  </tr>
+
+<h1>Merchants</h1>
+<form class="form" action="index.html" method="post">
   <% for merchant in @merchants %>
-  <tr>
-    <td><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
-    <td>|</td>
-    <td></td>
-  </tr>
-  <% end %>
-</table>
-<p><a href="merchants/new">New Merchant</a></p>
+<h1><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></h1>
+<% end %>
+<button class="button" type="button" name="button"><a href="merchants/new">New Merchant</a></button>
+</form>
