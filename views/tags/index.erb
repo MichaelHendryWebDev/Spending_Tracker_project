@@ -1,14 +1,10 @@
 <h1>Tags</h1>
-<table>
-  <tr>
-    <th>Type</th>
-    <th></th>
-  </tr>
+<form class="form" action="index.html" method="post">
+
   <% for tag in @tags %>
-  <tr>
-    <td><a href="/tags/<%= tag.id %>"><%= tag.type %></a></td>
-    <td>|</td>
-  </tr>
+  <h2><a href="/tags/<%= tag.id %>"><%= tag.type %></a></h2>
   <% end %>
-</table>
-<p><a href="tags/new">New Tag</a></p>
+  <button class="button" type="button" name="button">
+    <a href="tags/new">New Tag</a>
+  </button>
+</form>

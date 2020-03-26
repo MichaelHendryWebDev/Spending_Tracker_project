@@ -1,6 +1,6 @@
 
 <form class="edit-form">
-  <a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a>
+  <button class="button" type="button" name="button"><a href="/transactions/<%= @transaction.id %>/edit">Edit Transaction</a></button>
   <h1>Merchant: <%= @transaction.merchants.name %></h1>
   <%  for tag in @transaction.tags %>
   <h2>Tag: <%= tag.type %></h2>

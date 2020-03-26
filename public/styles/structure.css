@@ -84,6 +84,15 @@ a {
   background-color: skyblue;
 }
 
+.button2 {
+  font-size: 40px;
+  background-color: #8cd3ff;
+}
+
+.button2:hover {
+  background-color: skyblue;
+}
+
 .edit-link {
   color: skyblue;
 }
