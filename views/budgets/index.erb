@@ -1,5 +1,7 @@
-<h1>Budget: <% for budget in @budgets %>
-    <a href="/budgets/<%= budget.id %>"><%= budget.cash %></a></h1>
 
-
-  <% end %>
+<form class="form" action="index.html" method="post">
+  <h1 class="budget-title">Budget: <% for budget in @budgets %>
+      <a href="/budgets/<%= budget.id %>"><%= budget.cash %></a></h1>
+    <% end %>
+      <button class="button3" type="button" name="button"><a href="/budgets/<%= budget.id %>">Set Budget</a></button>
+</form>

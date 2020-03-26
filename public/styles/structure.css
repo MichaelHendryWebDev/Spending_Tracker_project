@@ -44,8 +44,8 @@ h2 {
 
 .budget {
   display: flex;
-  justify-content: flex-end;
-  padding-right: 100px;
+  justify-content: flex-start;
+  padding-left: 70px;
   color:white;
 }
 
@@ -93,6 +93,15 @@ a {
   background-color: skyblue;
 }
 
+.button3 {
+  font-size: 40px;
+  background-color: #8cd3ff;
+}
+
+.button3:hover {
+  background-color: skyblue;
+}
+
 .edit-link {
   color: skyblue;
 }
@@ -106,6 +115,7 @@ a {
   padding-bottom: 80px;
   background-color: #26abff;
   color: white;
+  padding: 50px;
 }
 
 .edit-form {
@@ -137,4 +147,8 @@ select {
 .edit-title {
   display: flex;
   justify-content: center;
+}
+
+.class-title {
+  padding-left: 70px;
 }
