@@ -2,11 +2,12 @@
   background-color: #009dff
 }
 
+
 h3 {
   font-size: 30px;
   color: red;
   font-family: Helvetica, sans-serif;
-  font-weight: bolder;  
+  font-weight: bolder;
 }
 
 h1 {
@@ -152,7 +153,7 @@ select {
 .total {
   display: flex;
   justify-content: flex-end;
-  padding-right: 100px;
+  padding-right: 150px;
   color: black;
   background-color: #26abff;
 }
@@ -172,4 +173,12 @@ select {
 
 .added-links:hover {
   text-decoration: underline;
+}
+
+.bgLogo {
+
+}
+
+img {
+  image: url('/images/cashtrack2.png');
 }
